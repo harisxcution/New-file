@@ -1,8 +1,10 @@
-k = 6
+import re
+from collections import Counter
+posts=["loving the new feature of this computer! #productlaunch #Ai",
+       "days 2 of #productlaunch -great talks on #Ai and #Security.",
+       "bug fix Shpped #changelog #Ai"]
 
-for i in range(10):
-    print( i)
-    if i == k:
-        break
-gfd gfd gfdgf
-trjytfdr]h=]
+hashtags=[]
+for post in posts:
+    hashtags += re.findall(r"#\w+", post)
+    print(Counter(hashtags).most_common())
